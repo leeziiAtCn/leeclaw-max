@@ -14,6 +14,16 @@
 
 技能是共享的，配置是你自己的。分开放，更新技能不会丢你的笔记，分享技能不会泄露你的环境。
 
+## Peekaboo 截图
+
+- 截图命令：`peekaboo image --mode screen --retina --path ~/.openclaw/media/screen.png`
+- **默认保存路径：`~/.openclaw/media/`**
+- 截图后通过 `openclaw message send -t "user:xxx" --media ~/.openclaw/media/screen.png` 发送
+
+## 权限
+
+- 屏幕录制权限已授予 `/opt/homebrew/bin/node`（OpenClaw 网关后台服务）
+
 ---
 
 记下任何帮你干活的东西。这是你的备忘录。

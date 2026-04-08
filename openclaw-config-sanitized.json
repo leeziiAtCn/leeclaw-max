@@ -26,19 +26,139 @@
       },
       "model": {
         "primary": "qwen/qwen3.6-plus"
+      },
+      "compaction": {
+        "mode": "safeguard"
       }
     },
     "list": [
       {
-        "id": "main"
+        "id": "main",
+        "tools": {
+          "alsoAllow": [
+            "feishu_bitable_app",
+            "feishu_bitable_app_table",
+            "feishu_bitable_app_table_field",
+            "feishu_bitable_app_table_record",
+            "feishu_bitable_app_table_view",
+            "feishu_calendar_calendar",
+            "feishu_calendar_event",
+            "feishu_calendar_event_attendee",
+            "feishu_calendar_freebusy",
+            "feishu_chat",
+            "feishu_chat_members",
+            "feishu_create_doc",
+            "feishu_doc_comments",
+            "feishu_doc_media",
+            "feishu_drive_file",
+            "feishu_fetch_doc",
+            "feishu_get_user",
+            "feishu_im_bot_image",
+            "feishu_im_user_fetch_resource",
+            "feishu_im_user_get_messages",
+            "feishu_im_user_get_thread_messages",
+            "feishu_im_user_message",
+            "feishu_im_user_search_messages",
+            "feishu_oauth",
+            "feishu_oauth_batch_auth",
+            "feishu_search_doc_wiki",
+            "feishu_search_user",
+            "feishu_sheet",
+            "feishu_task_comment",
+            "feishu_task_subtask",
+            "feishu_task_task",
+            "feishu_task_tasklist",
+            "feishu_update_doc",
+            "feishu_wiki_space",
+            "feishu_wiki_space_node"
+          ]
+        }
       },
       {
         "id": "coo",
-        "workspace": "/Users/leeclaw/.openclaw/workspace-COO"
+        "workspace": "/Users/leeclaw/.openclaw/workspace-COO",
+        "tools": {
+          "alsoAllow": [
+            "feishu_bitable_app",
+            "feishu_bitable_app_table",
+            "feishu_bitable_app_table_field",
+            "feishu_bitable_app_table_record",
+            "feishu_bitable_app_table_view",
+            "feishu_calendar_calendar",
+            "feishu_calendar_event",
+            "feishu_calendar_event_attendee",
+            "feishu_calendar_freebusy",
+            "feishu_chat",
+            "feishu_chat_members",
+            "feishu_create_doc",
+            "feishu_doc_comments",
+            "feishu_doc_media",
+            "feishu_drive_file",
+            "feishu_fetch_doc",
+            "feishu_get_user",
+            "feishu_im_bot_image",
+            "feishu_im_user_fetch_resource",
+            "feishu_im_user_get_messages",
+            "feishu_im_user_get_thread_messages",
+            "feishu_im_user_message",
+            "feishu_im_user_search_messages",
+            "feishu_oauth",
+            "feishu_oauth_batch_auth",
+            "feishu_search_doc_wiki",
+            "feishu_search_user",
+            "feishu_sheet",
+            "feishu_task_comment",
+            "feishu_task_subtask",
+            "feishu_task_task",
+            "feishu_task_tasklist",
+            "feishu_update_doc",
+            "feishu_wiki_space",
+            "feishu_wiki_space_node"
+          ]
+        }
       },
       {
         "id": "cto",
-        "workspace": "/Users/leeclaw/.openclaw/workspace-CTO"
+        "workspace": "/Users/leeclaw/.openclaw/workspace-CTO",
+        "tools": {
+          "alsoAllow": [
+            "feishu_bitable_app",
+            "feishu_bitable_app_table",
+            "feishu_bitable_app_table_field",
+            "feishu_bitable_app_table_record",
+            "feishu_bitable_app_table_view",
+            "feishu_calendar_calendar",
+            "feishu_calendar_event",
+            "feishu_calendar_event_attendee",
+            "feishu_calendar_freebusy",
+            "feishu_chat",
+            "feishu_chat_members",
+            "feishu_create_doc",
+            "feishu_doc_comments",
+            "feishu_doc_media",
+            "feishu_drive_file",
+            "feishu_fetch_doc",
+            "feishu_get_user",
+            "feishu_im_bot_image",
+            "feishu_im_user_fetch_resource",
+            "feishu_im_user_get_messages",
+            "feishu_im_user_get_thread_messages",
+            "feishu_im_user_message",
+            "feishu_im_user_search_messages",
+            "feishu_oauth",
+            "feishu_oauth_batch_auth",
+            "feishu_search_doc_wiki",
+            "feishu_search_user",
+            "feishu_sheet",
+            "feishu_task_comment",
+            "feishu_task_subtask",
+            "feishu_task_task",
+            "feishu_task_tasklist",
+            "feishu_update_doc",
+            "feishu_wiki_space",
+            "feishu_wiki_space_node"
+          ]
+        }
       }
     ]
   },
@@ -240,20 +360,33 @@
     }
   },
   "auth": {
-    "_redacted": "auth profiles removed for security"
+    "_redacted": true
   },
   "channels": {
     "feishu": {
       "enabled": true,
       "connectionMode": "websocket",
       "domain": "feishu",
-      "groupPolicy": "open",
-      "dmPolicy": "pairing",
+      "reactionNotifications": "own",
+      "typingIndicator": true,
+      "resolveSenderNames": true,
       "accounts": {
         "main": {},
         "coo": {},
-        "cto": {}
-      }
+        "cto": {},
+        "default": {
+          "webhookPath": "/feishu/events",
+          "dmPolicy": "allowlist",
+          "groupPolicy": "open",
+          "allowFrom": [
+            "ou_50bd66b5df46f6f4e99b6a9dfcdcf915"
+          ]
+        }
+      },
+      "mediaLocalRoots": [
+        "/root/clawd",
+        "/tmp"
+      ]
     }
   },
   "bindings": [
@@ -286,8 +419,27 @@
       },
       "qwen": {
         "enabled": true
+      },
+      "feishu": {
+        "enabled": false
+      },
+      "openclaw-lark": {
+        "enabled": true
       }
-    }
+    },
+    "installs": {
+      "openclaw-lark": {
+        "source": "archive",
+        "sourcePath": "/var/folders/w6/wpg7s5qn7_705j82h50pm0180000gn/T/openclaw-lark-nSoz26/larksuite-openclaw-lark-2026.4.7.tgz",
+        "installPath": "/Users/leeclaw/.openclaw/extensions/openclaw-lark",
+        "version": "2026.4.7",
+        "installedAt": "2026-04-08T18:14:06.914Z"
+      }
+    },
+    "allow": [
+      "openclaw-lark",
+      "qwen"
+    ]
   },
   "hooks": {
     "internal": {
@@ -316,6 +468,14 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.8",
-    "lastTouchedAt": "2026-04-08T17:24:41.839Z"
+    "lastTouchedAt": "2026-04-08T18:55:42.067Z"
+  },
+  "secrets": {
+    "providers": {
+      "lark-secrets": {
+        "source": "file",
+        "path": "~/.openclaw/credentials/lark.secrets.json"
+      }
+    }
   }
 }
