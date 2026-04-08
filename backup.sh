@@ -58,3 +58,6 @@ git add -A
 TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
 CHANGED=$(git diff --cached --name-only | head -20 | tr '\n' ', ' | sed 's/,$//')
 git commit -m "backup: $TIMESTAMP — $CHANGED"
+
+# Attempt push (will fail silently if no credentials)
+git push origin main 2>/dev/null || true
