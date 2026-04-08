@@ -3,6 +3,11 @@
 # Called by cron every 6 hours. Only commits if files changed.
 set -euo pipefail
 
+# Proxy for GitHub access
+export https_proxy=http://127.0.0.1:7890
+export http_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7890
+
 BACKUP_DIR="$HOME/.openclaw/backup-staging"
 cd "$BACKUP_DIR"
 
