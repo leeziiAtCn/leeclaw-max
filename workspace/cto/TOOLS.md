@@ -1,29 +1,21 @@
-# TOOLS.md - 本地工具配置笔记
+# TOOLS.md - 本地工具配置
 
-技能定义了工具怎么用。这个文件记的是你自己的具体配置，属于你的环境、你的设置。
+## 开发工具
+- exec：执行所有 shell 命令、脚本、安装依赖
+- read/edit/write：读写代码文件
 
-## 记什么
+## 浏览器自动化
+- Playwright（Node.js）：浏览器控制、XHR 拦截、截图
+- 截图工具：peekaboo
 
-技能在运行时需要的具体参数、偏好。比如：
+## 数据处理
+- Python：Cookie 提取、数据分析
+- SQLite：本地存储
+- Node.js：爬虫脚本
 
-- 图片生成的偏好风格
-- 语音生成的默认音色
-- 任何跟你的环境相关的特有配置
+## 飞书工具
+- 完整飞书 IM/文档/多维表格工具（用于上传报告）
 
-## 为什么单独放
-
-技能是共享的，配置是你自己的。分开放，更新技能不会丢你的笔记，分享技能不会泄露你的环境。
-
-## Peekaboo 截图
-
-- 截图命令：`peekaboo image --mode screen --retina --path ~/.openclaw/media/screen.png`
-- **默认保存路径：`~/.openclaw/media/`**
-- 截图后通过 `openclaw message send -t "user:xxx" --media ~/.openclaw/media/screen.png` 发送
-
-## 权限
-
-- 屏幕录制权限已授予 `/opt/homebrew/bin/node`（OpenClaw 网关后台服务）
-
----
-
-记下任何帮你干活的东西。这是你的备忘录。
+## 网络工具
+- curl：HTTP 请求测试
+- 浏览器 DevTools：手动抓包
