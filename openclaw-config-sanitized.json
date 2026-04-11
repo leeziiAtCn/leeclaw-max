@@ -370,6 +370,11 @@
       "reactionNotifications": "own",
       "typingIndicator": true,
       "resolveSenderNames": true,
+      "streaming": true,
+      "footer": {
+        "elapsed": true,
+        "status": true
+      },
       "accounts": {
         "main": {},
         "coo": {},
