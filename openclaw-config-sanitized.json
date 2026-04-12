@@ -22,10 +22,33 @@
         "qwen/glm-4.7": {},
         "modelstudio/glm-4.7": {},
         "qwen/kimi-k2.5": {},
-        "modelstudio/kimi-k2.5": {}
+        "modelstudio/kimi-k2.5": {},
+        "minimax/MiniMax-M2.7": {
+          "alias": "Minimax"
+        }
       },
       "model": {
-        "primary": "qwen/qwen3.6-plus"
+        "primary": "minimax/MiniMax-M2.7",
+        "fallbacks": [
+          "qwen/qwen3.5-plus",
+          "modelstudio/qwen3.5-plus",
+          "qwen/qwen3.6-plus",
+          "modelstudio/qwen3.6-plus",
+          "qwen/qwen3-max-2026-01-23",
+          "modelstudio/qwen3-max-2026-01-23",
+          "qwen/qwen3-coder-next",
+          "modelstudio/qwen3-coder-next",
+          "qwen/qwen3-coder-plus",
+          "modelstudio/qwen3-coder-plus",
+          "qwen/MiniMax-M2.5",
+          "modelstudio/MiniMax-M2.5",
+          "qwen/glm-5",
+          "modelstudio/glm-5",
+          "qwen/glm-4.7",
+          "modelstudio/glm-4.7",
+          "qwen/kimi-k2.5",
+          "modelstudio/kimi-k2.5"
+        ]
       },
       "compaction": {
         "mode": "safeguard"
@@ -531,6 +554,30 @@
             "maxTokens": 32768
           }
         ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.06,
+              "cacheWrite": 0.375
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ],
+        "api": "anthropic-messages",
+        "authHeader": true
       }
     }
   },
@@ -637,6 +684,9 @@
       },
       "openclaw-lark": {
         "enabled": true
+      },
+      "minimax": {
+        "enabled": true
       }
     },
     "installs": {
@@ -650,7 +700,8 @@
     },
     "allow": [
       "openclaw-lark",
-      "qwen"
+      "qwen",
+      "minimax"
     ]
   },
   "hooks": {
@@ -673,14 +724,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-08T17:24:38.732Z",
+    "lastRunAt": "2026-04-12T16:05:12.155Z",
     "lastRunVersion": "2026.4.8",
-    "lastRunCommand": "onboard",
+    "lastRunCommand": "configure",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.4.8",
-    "lastTouchedAt": "2026-04-08T18:55:42.067Z"
+    "lastTouchedAt": "2026-04-12T16:05:24.693Z"
   },
   "secrets": {
     "providers": {
